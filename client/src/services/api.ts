@@ -85,4 +85,15 @@ export const dashboardApi = {
     api.get<Array<{ stage: string; count: number }>>('/dashboard/funnel'),
 };
 
+export const subscriptionsApi = {
+  checkout: (tier: string, billing: 'monthly' | 'yearly' = 'monthly') =>
+    api.post<{ url: string }>('/subscriptions/checkout', { tier, billing }),
+
+  portal: () =>
+    api.post<{ url: string }>('/subscriptions/portal'),
+
+  current: () =>
+    api.get<{ tier: string; status: string; current_period_end?: string }>('/subscriptions/current'),
+};
+
 export default api;

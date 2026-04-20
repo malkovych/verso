@@ -1,4 +1,4 @@
--- SalesAI Database Schema for Supabase
+-- Verso Database Schema for Supabase
 -- Run this in Supabase SQL Editor
 
 -- Enable UUID extension
@@ -13,7 +13,7 @@ create table public.profiles (
   full_name text,
   avatar_url text,
   subscription_tier text default 'free' check (subscription_tier in ('free', 'basic', 'pro', 'business')),
-  stripe_customer_id text,
+  ls_customer_id text,
   preferred_language text default 'en' check (preferred_language in ('en', 'pl', 'es', 'de', 'uk')),
   created_at timestamptz default now(),
   updated_at timestamptz default now()
@@ -179,8 +179,9 @@ create policy "Users can manage own integrations"
 create table public.subscriptions (
   id uuid default uuid_generate_v4() primary key,
   user_id uuid references public.profiles(id) on delete cascade not null unique,
-  stripe_subscription_id text,
-  stripe_price_id text,
+  ls_subscription_id text,
+  ls_customer_id text,
+  ls_variant_id text,
   tier text default 'free' check (tier in ('free', 'basic', 'pro', 'business')),
   status text default 'active' check (status in ('active', 'canceled', 'past_due', 'trialing')),
   current_period_start timestamptz,

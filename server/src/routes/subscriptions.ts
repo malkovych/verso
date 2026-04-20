@@ -1,17 +1,28 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { authMiddleware, type AuthRequest } from '../middleware/auth.js';
-import { createCheckoutSession, createPortalSession, handleWebhook } from '../services/stripe.js';
+import {
+  createCheckout,
+  getCustomerPortalUrl,
+  handleWebhook,
+} from '../services/lemonsqueezy.js';
 import { supabase } from '../config/supabase.js';
 
 const router = Router();
 
 router.post('/webhook', async (req: Request, res: Response) => {
   try {
-    const signature = req.headers['stripe-signature'] as string;
-    await handleWebhook(req.body, signature);
+    const signature = req.headers['x-signature'] as string;
+    if (!signature) {
+      res.status(400).json({ error: 'Missing signature' });
+      return;
+    }
+
+    const rawBody = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
+    await handleWebhook(rawBody, signature);
     res.json({ received: true });
   } catch (error: any) {
+    console.error('Webhook error:', error.message);
     res.status(400).json({ error: error.message });
   }
 });
@@ -26,14 +37,14 @@ router.post('/checkout', (async (req: AuthRequest, res: Response) => {
       return;
     }
 
-    const session = await createCheckoutSession(
+    const result = await createCheckout(
       req.user!.id,
       req.user!.email,
       tier,
       billing || 'monthly'
     );
 
-    res.json({ url: session.url });
+    res.json({ url: result.url });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
@@ -43,17 +54,17 @@ router.post('/portal', (async (req: AuthRequest, res: Response) => {
   try {
     const { data: profile } = await supabase
       .from('profiles')
-      .select('stripe_customer_id')
+      .select('ls_customer_id')
       .eq('id', req.user!.id)
       .single();
 
-    if (!profile?.stripe_customer_id) {
+    if (!profile?.ls_customer_id) {
       res.status(400).json({ error: 'No active subscription' });
       return;
     }
 
-    const session = await createPortalSession(profile.stripe_customer_id);
-    res.json({ url: session.url });
+    const portalUrl = await getCustomerPortalUrl(profile.ls_customer_id);
+    res.json({ url: portalUrl });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

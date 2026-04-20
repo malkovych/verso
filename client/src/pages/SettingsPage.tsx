@@ -1,10 +1,41 @@
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
 import { supportedLanguages } from '../i18n';
+import { subscriptionsApi } from '../services/api';
+import { ExternalLink, Loader2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function SettingsPage() {
   const { t, i18n } = useTranslation();
   const { user } = useAuth();
+  const [sub, setSub] = useState<{ tier: string; status: string } | null>(null);
+  const [portalLoading, setPortalLoading] = useState(false);
+
+  useEffect(() => {
+    subscriptionsApi.current()
+      .then(({ data }) => setSub(data))
+      .catch(() => setSub({ tier: 'free', status: 'active' }));
+  }, []);
+
+  const openPortal = async () => {
+    setPortalLoading(true);
+    try {
+      const { data } = await subscriptionsApi.portal();
+      if (data.url) window.location.href = data.url;
+    } catch {
+      toast.error('No active subscription to manage');
+    } finally {
+      setPortalLoading(false);
+    }
+  };
+
+  const tierLabels: Record<string, string> = {
+    free: 'Free',
+    basic: 'Basic — $9.99/mo',
+    pro: 'Professional — $29.99/mo',
+    business: 'Business — $49.99/mo',
+  };
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -56,12 +87,30 @@ export default function SettingsPage() {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">{t('settings.subscription')}</h2>
           <div className="flex items-center justify-between p-4 bg-primary-50 rounded-xl">
             <div>
-              <p className="font-semibold text-primary-900">Free Plan</p>
-              <p className="text-sm text-primary-600">Upgrade for more features</p>
+              <p className="font-semibold text-primary-900">
+                {sub ? tierLabels[sub.tier] || sub.tier : '...'}
+              </p>
+              <p className="text-sm text-primary-600">
+                {sub?.tier === 'free'
+                  ? 'Upgrade for more features'
+                  : `Status: ${sub?.status || '...'}`}
+              </p>
             </div>
-            <a href="/pricing" className="btn-primary text-sm py-2 px-4">
-              Upgrade
-            </a>
+            <div className="flex gap-2">
+              {sub?.tier !== 'free' && (
+                <button
+                  onClick={openPortal}
+                  disabled={portalLoading}
+                  className="btn-secondary text-sm py-2 px-4 flex items-center gap-2"
+                >
+                  {portalLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <ExternalLink className="w-4 h-4" />}
+                  Manage
+                </button>
+              )}
+              <a href="/pricing" className="btn-primary text-sm py-2 px-4">
+                {sub?.tier === 'free' ? 'Upgrade' : 'Change Plan'}
+              </a>
+            </div>
           </div>
         </div>
       </div>
