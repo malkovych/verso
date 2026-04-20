@@ -85,7 +85,7 @@ export default function PricingPage() {
                 <h3 className={`text-xl font-bold mb-2 ${isPro ? 'text-white' : 'text-gray-900'}`}>
                   {t(`pricing.${plan}.name`)}
                 </h3>
-                <div className="flex items-baseline gap-1 mb-6">
+                <div className="flex items-baseline gap-1 mb-3">
                   <span className={`text-4xl font-extrabold ${isPro ? 'text-white' : 'text-gray-900'}`}>
                     {t(`pricing.${plan}.price`)}
                   </span>
@@ -93,6 +93,10 @@ export default function PricingPage() {
                     {t(`pricing.${plan}.period`)}
                   </span>
                 </div>
+
+                <p className={`text-sm leading-relaxed mb-6 ${isPro ? 'text-primary-100' : 'text-gray-500'}`}>
+                  {t(`pricing.${plan}.description`)}
+                </p>
 
                 <ul className="space-y-3 mb-8">
                   {features.map((feature, i) => (

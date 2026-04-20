@@ -73,9 +73,9 @@
     "subtitle": "Zacznij za darmo i skaluj się",
     "monthly": "Miesięcznie",
     "yearly": "Rocznie",
-    "basic": { "name": "Podstawowy", "price": "$9.99", "period": "/mies", "features": ["Podstawowy asystent AI", "Integracja z Google Calendar", "Integracja z Trello", "Wsparcie 5 języków", "100 rozmów/miesiąc", "Wsparcie email"], "cta": "Wybierz Podstawowy" },
-    "pro": { "name": "Profesjonalny", "price": "$29.99", "period": "/mies", "popular": "Najpopularniejszy", "features": ["Wszystko z Podstawowego", "Wszystkie integracje CRM", "Własna baza wiedzy", "Nieograniczone rozmowy", "Zaawansowana analityka", "Priorytetowe wsparcie"], "cta": "Wybierz Profesjonalny" },
-    "business": { "name": "Biznesowy", "price": "$49.99", "period": "/mies", "features": ["Wszystko z Profesjonalnego", "Dedykowany opiekun", "Niestandardowe szkolenie AI", "Dostęp do API", "Opcja white-label", "Wsparcie 24/7"], "cta": "Skontaktuj się" }
+    "basic": { "name": "Podstawowy", "price": "$9.99", "period": "/mies", "description": "Idealny dla soloprzedsiębiorców i małych zespołów rozpoczynających przygodę z AI w sprzedaży. Automatyzuj rutynowe rozmowy i nie trać żadnego leada.", "features": ["Podstawowy asystent AI", "Integracja z Google Calendar", "Integracja z Trello", "Wsparcie 5 języków", "100 rozmów/miesiąc", "Wsparcie email"], "cta": "Wybierz Podstawowy" },
+    "pro": { "name": "Profesjonalny", "price": "$29.99", "period": "/mies", "popular": "Najpopularniejszy", "description": "Dla rosnących zespołów potrzebujących pełnej integracji CRM, własnej bazy wiedzy i nieograniczonych rozmów AI do skalowania lejka sprzedażowego.", "features": ["Wszystko z Podstawowego", "Wszystkie integracje CRM", "Własna baza wiedzy", "Nieograniczone rozmowy", "Zaawansowana analityka", "Priorytetowe wsparcie"], "cta": "Wybierz Profesjonalny" },
+    "business": { "name": "Biznesowy", "price": "$49.99", "period": "/mies", "description": "Dla firm, które chcą w pełni markowego AI w sprzedaży, dedykowanego wsparcia, dostępu do API i niestandardowego szkolenia modelu pod swój produkt.", "features": ["Wszystko z Profesjonalnego", "Dedykowany opiekun", "Niestandardowe szkolenie AI", "Dostęp do API", "Opcja white-label", "Wsparcie 24/7"], "cta": "Skontaktuj się" }
   },
   "auth": {
     "login": "Zaloguj się",

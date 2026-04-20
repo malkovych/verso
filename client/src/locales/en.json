@@ -95,6 +95,7 @@
       "name": "Basic",
       "price": "$9.99",
       "period": "/month",
+      "description": "Perfect for solo entrepreneurs and small teams getting started with AI-assisted sales. Automate routine conversations and never miss a lead.",
       "features": [
         "Core AI sales assistant",
         "Google Calendar integration",
@@ -110,6 +111,7 @@
       "price": "$29.99",
       "period": "/month",
       "popular": "Most Popular",
+      "description": "For growing teams that need full CRM coverage, a custom knowledge base, and unlimited AI conversations to scale their sales pipeline.",
       "features": [
         "Everything in Basic",
         "All CRM integrations",
@@ -124,6 +126,7 @@
       "name": "Business",
       "price": "$49.99",
       "period": "/month",
+      "description": "Built for companies that want a fully branded AI sales experience, dedicated support, API access, and custom model training tailored to their product.",
       "features": [
         "Everything in Professional",
         "Dedicated account manager",
