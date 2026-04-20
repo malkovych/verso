@@ -1,0 +1,27 @@
+{
+  "app": { "title": "Asistente de Ventas AI", "description": "Gestión de embudo de ventas con IA" },
+  "nav": { "home": "Inicio", "chat": "Chat", "dashboard": "Panel", "knowledgeBase": "Base de conocimientos", "integrations": "Integraciones", "settings": "Configuración", "pricing": "Precios", "login": "Iniciar sesión", "signup": "Registrarse", "logout": "Cerrar sesión" },
+  "hero": { "title": "Tu Asistente de Ventas AI", "subtitle": "Automatiza tu embudo de ventas con conversaciones impulsadas por IA. Manejo de objeciones, guía de prospectos y cierre de tratos — 24/7.", "cta": "Comenzar gratis", "ctaSecondary": "Ver precios" },
+  "features": {
+    "title": "Todo lo que necesitas para cerrar más tratos",
+    "salesFunnel": { "title": "Embudo de ventas inteligente", "description": "La IA guía automáticamente a tus prospectos a través de cada etapa del embudo de ventas." },
+    "objections": { "title": "Manejo de objeciones", "description": "Entrenado en técnicas de ventas probadas para superar cualquier objeción." },
+    "multilingual": { "title": "Soporte multilingüe", "description": "Comunícate con clientes en 5 idiomas: inglés, polaco, español, alemán, ucraniano." },
+    "integrations": { "title": "Integraciones CRM", "description": "Integración perfecta con Google Calendar, Trello, Hubstaff y tiendas en línea." },
+    "knowledgeBase": { "title": "Base de conocimientos personalizada", "description": "Construye tu propia base de conocimientos para que la IA la consulte durante las conversaciones." },
+    "analytics": { "title": "Análisis de conversaciones", "description": "Rastrea el rendimiento del embudo, tasas de conversión y métricas de compromiso." }
+  },
+  "chat": { "title": "Chat de ventas", "placeholder": "Escribe tu mensaje...", "send": "Enviar", "thinking": "IA está pensando...", "newChat": "Nuevo chat", "history": "Historial de chats", "noMessages": "Inicia una conversación con tu asistente de ventas AI" },
+  "dashboard": { "title": "Panel de control", "totalConversations": "Total de conversaciones", "activeLeads": "Leads activos", "conversionRate": "Tasa de conversión", "revenue": "Ingresos", "recentChats": "Chats recientes", "funnelStages": "Etapas del embudo" },
+  "knowledgeBase": { "title": "Base de conocimientos", "addDocument": "Añadir documento", "search": "Buscar en la base de conocimientos...", "noDocuments": "Sin documentos aún. Añade tu primer documento para mejorar las respuestas de la IA.", "upload": "Subir", "delete": "Eliminar", "edit": "Editar" },
+  "integrations": { "title": "Integraciones", "connected": "Conectado", "disconnected": "Desconectado", "connect": "Conectar", "disconnect": "Desconectar", "googleCalendar": "Google Calendar", "trello": "Trello", "hubstaff": "Hubstaff", "shopChat": "Widget de chat de tienda" },
+  "pricing": {
+    "title": "Elige tu plan", "subtitle": "Comienza gratis y escala", "monthly": "Mensual", "yearly": "Anual",
+    "basic": { "name": "Básico", "price": "$9.99", "period": "/mes", "features": ["Asistente AI básico", "Integración Google Calendar", "Integración Trello", "5 idiomas", "100 conversaciones/mes", "Soporte email"], "cta": "Elegir Básico" },
+    "pro": { "name": "Profesional", "price": "$29.99", "period": "/mes", "popular": "Más popular", "features": ["Todo del Básico", "Todas las integraciones CRM", "Base de conocimientos propia", "Conversaciones ilimitadas", "Análisis avanzado", "Soporte prioritario"], "cta": "Elegir Profesional" },
+    "business": { "name": "Empresarial", "price": "$49.99", "period": "/mes", "features": ["Todo del Profesional", "Gerente dedicado", "Entrenamiento AI personalizado", "Acceso API", "Opción white-label", "Soporte 24/7"], "cta": "Contactar ventas" }
+  },
+  "auth": { "login": "Iniciar sesión", "signup": "Registrarse", "email": "Email", "password": "Contraseña", "confirmPassword": "Confirmar contraseña", "forgotPassword": "¿Olvidaste tu contraseña?", "noAccount": "¿No tienes cuenta?", "hasAccount": "¿Ya tienes cuenta?", "orContinueWith": "O continuar con", "google": "Google", "github": "GitHub" },
+  "settings": { "title": "Configuración", "profile": "Perfil", "language": "Idioma", "notifications": "Notificaciones", "subscription": "Suscripción", "save": "Guardar cambios" },
+  "common": { "loading": "Cargando...", "error": "Algo salió mal", "retry": "Reintentar", "cancel": "Cancelar", "save": "Guardar", "delete": "Eliminar", "edit": "Editar", "back": "Atrás", "next": "Siguiente", "search": "Buscar" }
+}

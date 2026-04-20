@@ -1,0 +1,113 @@
+{
+  "app": {
+    "title": "Asystent Sprzedaży AI",
+    "description": "Zarządzanie lejkiem sprzedażowym z AI"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "chat": "Czat",
+    "dashboard": "Panel",
+    "knowledgeBase": "Baza wiedzy",
+    "integrations": "Integracje",
+    "settings": "Ustawienia",
+    "pricing": "Cennik",
+    "login": "Zaloguj się",
+    "signup": "Rejestracja",
+    "logout": "Wyloguj"
+  },
+  "hero": {
+    "title": "Twój Asystent Sprzedaży AI",
+    "subtitle": "Zautomatyzuj swój lejek sprzedażowy dzięki rozmowom opartym na AI. Obsługa obiekcji, prowadzenie klientów i zamykanie transakcji — 24/7.",
+    "cta": "Rozpocznij za darmo",
+    "ctaSecondary": "Zobacz cennik"
+  },
+  "features": {
+    "title": "Wszystko, czego potrzebujesz, aby zamknąć więcej transakcji",
+    "salesFunnel": { "title": "Inteligentny lejek sprzedażowy", "description": "AI automatycznie prowadzi Twoich klientów przez każdy etap lejka sprzedażowego." },
+    "objections": { "title": "Obsługa obiekcji", "description": "Wyszkolony na sprawdzonych technikach sprzedaży do pokonywania wszelkich obiekcji klientów." },
+    "multilingual": { "title": "Wsparcie wielojęzyczne", "description": "Komunikuj się z klientami w 5 językach: angielski, polski, hiszpański, niemiecki, ukraiński." },
+    "integrations": { "title": "Integracje CRM", "description": "Bezproblemowa integracja z Google Calendar, Trello, Hubstaff i sklepami online." },
+    "knowledgeBase": { "title": "Własna baza wiedzy", "description": "Zbuduj własną bazę wiedzy, do której AI będzie się odwoływać podczas rozmów." },
+    "analytics": { "title": "Analityka rozmów", "description": "Śledź wydajność lejka, wskaźniki konwersji i zaangażowania klientów." }
+  },
+  "chat": {
+    "title": "Czat sprzedażowy",
+    "placeholder": "Wpisz wiadomość...",
+    "send": "Wyślij",
+    "thinking": "AI myśli...",
+    "newChat": "Nowy czat",
+    "history": "Historia czatów",
+    "noMessages": "Rozpocznij rozmowę z asystentem sprzedaży AI"
+  },
+  "dashboard": {
+    "title": "Panel zarządzania",
+    "totalConversations": "Łączna liczba rozmów",
+    "activeLeads": "Aktywne leady",
+    "conversionRate": "Wskaźnik konwersji",
+    "revenue": "Przychód",
+    "recentChats": "Ostatnie czaty",
+    "funnelStages": "Etapy lejka"
+  },
+  "knowledgeBase": {
+    "title": "Baza wiedzy",
+    "addDocument": "Dodaj dokument",
+    "search": "Szukaj w bazie wiedzy...",
+    "noDocuments": "Brak dokumentów. Dodaj pierwszy dokument, aby ulepszyć odpowiedzi AI.",
+    "upload": "Prześlij",
+    "delete": "Usuń",
+    "edit": "Edytuj"
+  },
+  "integrations": {
+    "title": "Integracje",
+    "connected": "Połączono",
+    "disconnected": "Rozłączono",
+    "connect": "Połącz",
+    "disconnect": "Rozłącz",
+    "googleCalendar": "Google Calendar",
+    "trello": "Trello",
+    "hubstaff": "Hubstaff",
+    "shopChat": "Widget czatu sklepu"
+  },
+  "pricing": {
+    "title": "Wybierz swój plan",
+    "subtitle": "Zacznij za darmo i skaluj się",
+    "monthly": "Miesięcznie",
+    "yearly": "Rocznie",
+    "basic": { "name": "Podstawowy", "price": "$9.99", "period": "/mies", "features": ["Podstawowy asystent AI", "Integracja z Google Calendar", "Integracja z Trello", "Wsparcie 5 języków", "100 rozmów/miesiąc", "Wsparcie email"], "cta": "Wybierz Podstawowy" },
+    "pro": { "name": "Profesjonalny", "price": "$29.99", "period": "/mies", "popular": "Najpopularniejszy", "features": ["Wszystko z Podstawowego", "Wszystkie integracje CRM", "Własna baza wiedzy", "Nieograniczone rozmowy", "Zaawansowana analityka", "Priorytetowe wsparcie"], "cta": "Wybierz Profesjonalny" },
+    "business": { "name": "Biznesowy", "price": "$49.99", "period": "/mies", "features": ["Wszystko z Profesjonalnego", "Dedykowany opiekun", "Niestandardowe szkolenie AI", "Dostęp do API", "Opcja white-label", "Wsparcie 24/7"], "cta": "Skontaktuj się" }
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "signup": "Rejestracja",
+    "email": "Email",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "hasAccount": "Masz już konto?",
+    "orContinueWith": "Lub kontynuuj przez",
+    "google": "Google",
+    "github": "GitHub"
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "profile": "Profil",
+    "language": "Język",
+    "notifications": "Powiadomienia",
+    "subscription": "Subskrypcja",
+    "save": "Zapisz zmiany"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Coś poszło nie tak",
+    "retry": "Ponów",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "search": "Szukaj"
+  }
+}

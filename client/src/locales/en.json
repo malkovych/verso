@@ -1,0 +1,171 @@
+{
+  "app": {
+    "title": "Sales Assistant AI",
+    "description": "AI-powered sales funnel management"
+  },
+  "nav": {
+    "home": "Home",
+    "chat": "Chat",
+    "dashboard": "Dashboard",
+    "knowledgeBase": "Knowledge Base",
+    "integrations": "Integrations",
+    "settings": "Settings",
+    "pricing": "Pricing",
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "title": "Your AI Sales Assistant",
+    "subtitle": "Automate your sales funnel with AI-powered conversations. Handle objections, guide prospects, and close deals — 24/7.",
+    "cta": "Get Started Free",
+    "ctaSecondary": "See Pricing"
+  },
+  "features": {
+    "title": "Everything you need to close more deals",
+    "salesFunnel": {
+      "title": "Smart Sales Funnel",
+      "description": "AI guides your prospects through every stage of the sales funnel automatically."
+    },
+    "objections": {
+      "title": "Objection Handling",
+      "description": "Trained on proven sales techniques to overcome any prospect objection."
+    },
+    "multilingual": {
+      "title": "Multilingual Support",
+      "description": "Communicate with clients in 5 languages: English, Polish, Spanish, German, Ukrainian."
+    },
+    "integrations": {
+      "title": "CRM Integrations",
+      "description": "Seamless integration with Google Calendar, Trello, Hubstaff and online shops."
+    },
+    "knowledgeBase": {
+      "title": "Custom Knowledge Base",
+      "description": "Build your own knowledge base for the AI to reference during conversations."
+    },
+    "analytics": {
+      "title": "Conversation Analytics",
+      "description": "Track funnel performance, conversion rates, and customer engagement metrics."
+    }
+  },
+  "chat": {
+    "title": "Sales Chat",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "thinking": "AI is thinking...",
+    "newChat": "New Chat",
+    "history": "Chat History",
+    "noMessages": "Start a conversation with your AI sales assistant"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalConversations": "Total Conversations",
+    "activeLeads": "Active Leads",
+    "conversionRate": "Conversion Rate",
+    "revenue": "Revenue",
+    "recentChats": "Recent Chats",
+    "funnelStages": "Funnel Stages"
+  },
+  "knowledgeBase": {
+    "title": "Knowledge Base",
+    "addDocument": "Add Document",
+    "search": "Search knowledge base...",
+    "noDocuments": "No documents yet. Add your first document to enhance AI responses.",
+    "upload": "Upload",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "integrations": {
+    "title": "Integrations",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "googleCalendar": "Google Calendar",
+    "trello": "Trello",
+    "hubstaff": "Hubstaff",
+    "shopChat": "Shop Chat Widget"
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Start free and scale as you grow",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "basic": {
+      "name": "Basic",
+      "price": "$9.99",
+      "period": "/month",
+      "features": [
+        "Core AI sales assistant",
+        "Google Calendar integration",
+        "Trello integration",
+        "5 languages support",
+        "100 conversations/month",
+        "Email support"
+      ],
+      "cta": "Start Basic"
+    },
+    "pro": {
+      "name": "Professional",
+      "price": "$29.99",
+      "period": "/month",
+      "popular": "Most Popular",
+      "features": [
+        "Everything in Basic",
+        "All CRM integrations",
+        "Custom knowledge base",
+        "Unlimited conversations",
+        "Advanced analytics",
+        "Priority support"
+      ],
+      "cta": "Start Professional"
+    },
+    "business": {
+      "name": "Business",
+      "price": "$49.99",
+      "period": "/month",
+      "features": [
+        "Everything in Professional",
+        "Dedicated account manager",
+        "Custom AI training",
+        "API access",
+        "White-label option",
+        "24/7 phone support"
+      ],
+      "cta": "Contact Sales"
+    }
+  },
+  "auth": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "orContinueWith": "Or continue with",
+    "google": "Google",
+    "github": "GitHub"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "language": "Language",
+    "notifications": "Notifications",
+    "subscription": "Subscription",
+    "save": "Save Changes"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search"
+  }
+}

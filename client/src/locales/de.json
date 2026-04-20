@@ -1,0 +1,27 @@
+{
+  "app": { "title": "KI-Verkaufsassistent", "description": "KI-gestütztes Vertriebstrichter-Management" },
+  "nav": { "home": "Startseite", "chat": "Chat", "dashboard": "Dashboard", "knowledgeBase": "Wissensdatenbank", "integrations": "Integrationen", "settings": "Einstellungen", "pricing": "Preise", "login": "Anmelden", "signup": "Registrieren", "logout": "Abmelden" },
+  "hero": { "title": "Ihr KI-Verkaufsassistent", "subtitle": "Automatisieren Sie Ihren Vertriebstrichter mit KI-gestützten Gesprächen. Einwandbehandlung, Kundenführung und Geschäftsabschlüsse — 24/7.", "cta": "Kostenlos starten", "ctaSecondary": "Preise ansehen" },
+  "features": {
+    "title": "Alles was Sie brauchen, um mehr Geschäfte abzuschließen",
+    "salesFunnel": { "title": "Intelligenter Vertriebstrichter", "description": "KI führt Ihre Interessenten automatisch durch jede Phase des Vertriebstrichters." },
+    "objections": { "title": "Einwandbehandlung", "description": "Trainiert auf bewährten Verkaufstechniken zur Überwindung jedes Kundeneinwands." },
+    "multilingual": { "title": "Mehrsprachige Unterstützung", "description": "Kommunizieren Sie mit Kunden in 5 Sprachen: Englisch, Polnisch, Spanisch, Deutsch, Ukrainisch." },
+    "integrations": { "title": "CRM-Integrationen", "description": "Nahtlose Integration mit Google Calendar, Trello, Hubstaff und Online-Shops." },
+    "knowledgeBase": { "title": "Eigene Wissensdatenbank", "description": "Erstellen Sie Ihre eigene Wissensdatenbank, auf die die KI während Gesprächen verweisen kann." },
+    "analytics": { "title": "Gesprächsanalyse", "description": "Verfolgen Sie Trichterleistung, Konversionsraten und Kundenbindungsmetriken." }
+  },
+  "chat": { "title": "Verkaufschat", "placeholder": "Nachricht eingeben...", "send": "Senden", "thinking": "KI denkt nach...", "newChat": "Neuer Chat", "history": "Chat-Verlauf", "noMessages": "Starten Sie ein Gespräch mit Ihrem KI-Verkaufsassistenten" },
+  "dashboard": { "title": "Dashboard", "totalConversations": "Gespräche gesamt", "activeLeads": "Aktive Leads", "conversionRate": "Konversionsrate", "revenue": "Umsatz", "recentChats": "Letzte Chats", "funnelStages": "Trichter-Phasen" },
+  "knowledgeBase": { "title": "Wissensdatenbank", "addDocument": "Dokument hinzufügen", "search": "Wissensdatenbank durchsuchen...", "noDocuments": "Noch keine Dokumente. Fügen Sie Ihr erstes Dokument hinzu, um KI-Antworten zu verbessern.", "upload": "Hochladen", "delete": "Löschen", "edit": "Bearbeiten" },
+  "integrations": { "title": "Integrationen", "connected": "Verbunden", "disconnected": "Getrennt", "connect": "Verbinden", "disconnect": "Trennen", "googleCalendar": "Google Calendar", "trello": "Trello", "hubstaff": "Hubstaff", "shopChat": "Shop-Chat-Widget" },
+  "pricing": {
+    "title": "Wählen Sie Ihren Plan", "subtitle": "Starten Sie kostenlos und skalieren Sie", "monthly": "Monatlich", "yearly": "Jährlich",
+    "basic": { "name": "Basis", "price": "$9.99", "period": "/Monat", "features": ["Basis KI-Assistent", "Google Calendar Integration", "Trello Integration", "5 Sprachen", "100 Gespräche/Monat", "E-Mail-Support"], "cta": "Basis wählen" },
+    "pro": { "name": "Professionell", "price": "$29.99", "period": "/Monat", "popular": "Am beliebtesten", "features": ["Alles aus Basis", "Alle CRM-Integrationen", "Eigene Wissensdatenbank", "Unbegrenzte Gespräche", "Erweiterte Analysen", "Prioritäts-Support"], "cta": "Professionell wählen" },
+    "business": { "name": "Business", "price": "$49.99", "period": "/Monat", "features": ["Alles aus Professionell", "Dedizierter Manager", "Individuelles KI-Training", "API-Zugang", "White-Label-Option", "24/7-Support"], "cta": "Vertrieb kontaktieren" }
+  },
+  "auth": { "login": "Anmelden", "signup": "Registrieren", "email": "E-Mail", "password": "Passwort", "confirmPassword": "Passwort bestätigen", "forgotPassword": "Passwort vergessen?", "noAccount": "Kein Konto?", "hasAccount": "Bereits ein Konto?", "orContinueWith": "Oder fortfahren mit", "google": "Google", "github": "GitHub" },
+  "settings": { "title": "Einstellungen", "profile": "Profil", "language": "Sprache", "notifications": "Benachrichtigungen", "subscription": "Abonnement", "save": "Änderungen speichern" },
+  "common": { "loading": "Laden...", "error": "Etwas ist schiefgelaufen", "retry": "Erneut versuchen", "cancel": "Abbrechen", "save": "Speichern", "delete": "Löschen", "edit": "Bearbeiten", "back": "Zurück", "next": "Weiter", "search": "Suchen" }
+}
