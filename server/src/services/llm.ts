@@ -1,7 +1,10 @@
-import OpenAI from 'openai';
+import axios from 'axios';
 import { env } from '../config/env.js';
 
-const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
+const ollamaApi = axios.create({
+  baseURL: env.OLLAMA_BASE_URL,
+  timeout: 120_000,
+});
 
 const SALES_SYSTEM_PROMPT = `You are an expert AI sales assistant. Your role is to:
 
@@ -28,7 +31,8 @@ const SALES_SYSTEM_PROMPT = `You are an expert AI sales assistant. Your role is 
    - If unsure, acknowledge and offer to find out
 
 Always respond in the same language the user writes in.
-At the end of each response, silently assess the funnel stage but don't mention it explicitly to the user.`;
+At the end of each response, silently assess the funnel stage but don't mention it explicitly to the user.
+Keep responses concise — 2-4 paragraphs max.`;
 
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
@@ -57,15 +61,17 @@ export async function generateChatResponse(
 
   const fullMessages = [...systemMessages, ...messages];
 
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4',
+  const { data } = await ollamaApi.post('/api/chat', {
+    model: env.OLLAMA_MODEL,
     messages: fullMessages,
-    temperature: 0.7,
-    max_tokens: 1024,
+    stream: false,
+    options: {
+      temperature: 0.7,
+      num_predict: 1024,
+    },
   });
 
-  const assistantMessage = response.choices[0]?.message?.content || '';
-
+  const assistantMessage = data.message?.content || '';
   const funnelStage = detectFunnelStage(messages, assistantMessage);
 
   return {
@@ -74,13 +80,31 @@ export async function generateChatResponse(
   };
 }
 
+/**
+ * Check if Ollama server is reachable and the configured model is available.
+ */
+export async function checkOllamaHealth(): Promise<{ ok: boolean; model: string; error?: string }> {
+  try {
+    const { data } = await ollamaApi.get('/api/tags');
+    const models: string[] = (data.models || []).map((m: any) => m.name);
+    const modelAvailable = models.some((m) => m.startsWith(env.OLLAMA_MODEL.split(':')[0]));
+    return {
+      ok: modelAvailable,
+      model: env.OLLAMA_MODEL,
+      error: modelAvailable ? undefined : `Model "${env.OLLAMA_MODEL}" not found. Available: ${models.join(', ')}`,
+    };
+  } catch (err: any) {
+    return { ok: false, model: env.OLLAMA_MODEL, error: `Ollama unreachable at ${env.OLLAMA_BASE_URL}: ${err.message}` };
+  }
+}
+
 function detectFunnelStage(messages: ChatMessage[], _latestResponse: string): string {
   const userMessages = messages.filter((m) => m.role === 'user').map((m) => m.content.toLowerCase());
   const allText = userMessages.join(' ');
 
-  if (/buy|purchase|order|sign up|subscribe|pay|checkout/.test(allText)) return 'Purchase';
-  if (/pricing|cost|plan|demo|trial|when can|schedule/.test(allText)) return 'Intent';
-  if (/compare|alternative|feature|how does|what if|vs/.test(allText)) return 'Consideration';
-  if (/tell me more|interested|curious|how|what|explain/.test(allText)) return 'Interest';
+  if (/buy|purchase|order|sign up|subscribe|pay|checkout|купити|замовити|оплатити/.test(allText)) return 'Purchase';
+  if (/pricing|cost|plan|demo|trial|when can|schedule|ціна|вартість|тариф|демо/.test(allText)) return 'Intent';
+  if (/compare|alternative|feature|how does|what if|vs|порівняти|альтернатив|функці/.test(allText)) return 'Consideration';
+  if (/tell me more|interested|curious|how|what|explain|розкажіть|цікавить|як|що/.test(allText)) return 'Interest';
   return 'Awareness';
 }

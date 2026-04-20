@@ -10,6 +10,7 @@ import knowledgeBaseRoutes from './routes/knowledgeBase.js';
 import dashboardRoutes from './routes/dashboard.js';
 import integrationsRoutes from './routes/integrations.js';
 import subscriptionRoutes from './routes/subscriptions.js';
+import { checkOllamaHealth } from './services/llm.js';
 
 const app = express();
 
@@ -32,13 +33,25 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/integrations', integrationsRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
 
-app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+app.get('/api/health', async (_req, res) => {
+  const ollama = await checkOllamaHealth();
+  res.json({
+    status: ollama.ok ? 'ok' : 'degraded',
+    timestamp: new Date().toISOString(),
+    ollama,
+  });
 });
 
-app.listen(env.PORT, () => {
+app.listen(env.PORT, async () => {
   console.log(`Server running on http://localhost:${env.PORT}`);
   console.log(`Environment: ${env.NODE_ENV}`);
+
+  const ollama = await checkOllamaHealth();
+  if (ollama.ok) {
+    console.log(`Ollama: connected, model "${ollama.model}" ready`);
+  } else {
+    console.warn(`Ollama WARNING: ${ollama.error}`);
+  }
 });
 
 export default app;

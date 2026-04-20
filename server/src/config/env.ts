@@ -6,7 +6,8 @@ dotenv.config({ path: resolve(__dirname, '../../.env') });
 export const env = {
   PORT: parseInt(process.env.PORT || '4000', 10),
   NODE_ENV: process.env.NODE_ENV || 'development',
-  OPENAI_API_KEY: process.env.OPENAI_API_KEY || '',
+  OLLAMA_BASE_URL: process.env.OLLAMA_BASE_URL || 'http://localhost:11434',
+  OLLAMA_MODEL: process.env.OLLAMA_MODEL || 'qwen3:14b',
   SUPABASE_URL: process.env.SUPABASE_URL || '',
   SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
   JWT_SECRET: process.env.JWT_SECRET || 'dev-secret',
